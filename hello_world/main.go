@@ -1,7 +1,12 @@
+// Определение пакета main
 package main
 
+// Импорт пакета fmt
 import "fmt"
 
+// Определение функции main
 func main() {
-	fmt.Println("Hello, world!")
+	// Вызов функции Print из пакета fmt
+	// Отступ 1 таб
+	fmt.Println("Hello, World!") // В конце не нужна точка с запятой
 }
