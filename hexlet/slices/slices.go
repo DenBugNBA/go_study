@@ -57,11 +57,28 @@ func main() {
 
 	a := []int{1, 2, 3}
 	appendAndModifySlice(a)
-	fmt.Println(a) // 123
+	fmt.Println(a) // [1 2 3]
 
 	RemoveTeacherNoOrder(a, 2)
-	fmt.Println(a)
+	fmt.Println(a) // [1 2 3]
 
 	a = Remove(a, 2)
-	fmt.Println(a)
+	fmt.Println(a) // [1 2]
+
+	nums1 := []int{1, 2, 3, 4, 5}
+	fmt.Println(nums1[5:]) // []
+
+	// panic: runtime error: slice bounds out of range [6:5]
+	//fmt.Println(nums1[6:]) // []
+
+	// panic: runtime error: slice bounds out of range [:6] with capacity 5
+	// fmt.Println(nums1[:6])
+
+	for i, num := range nums1 {
+		fmt.Println(i, num)
+	}
+
+	for i := range nums1 {
+		fmt.Println(i)
+	}
 }
