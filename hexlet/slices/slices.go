@@ -1,0 +1,67 @@
+package main
+
+import "fmt"
+
+func modifySliceAndAppend(nums []int) {
+	nums[0] = 10           // элемент будет и в исходном слайсе
+	nums = append(nums, 6) // элемент не добавится в исходный слайс
+}
+
+func appendAndModifySlice(nums []int) {
+	nums = append(nums, 4)
+	nums[0] = 2
+	nums[1] = 1
+	nums[2] = 0
+}
+
+func Remove(nums []int, i int) []int {
+	if i < 0 || i >= len(nums) {
+		return nums
+	}
+
+	var result []int
+
+	result = append(result, nums[:i]...)
+	result = append(result, nums[i+1:]...)
+
+	return append(result)
+}
+
+func RemoveTeacherNoOrder(nums []int, i int) []int {
+	if i < 0 || i > len(nums)-1 {
+		return nums
+	}
+
+	nums[i] = nums[len(nums)-1]
+
+	return nums[:len(nums)-1]
+}
+
+func main() {
+	nums := make([]int, 0, 5)
+
+	// panic: runtime error: index out of range [1] with length 0
+	// nums[1] = 1
+
+	nums = append(nums, 1)
+	fmt.Println(nums) // [1]
+	/*
+		Передача слайса как аргумента функции происходит хитро.
+		Длина и вместимость передаются по значению, но массив значений передается по ссылке.
+		Вследствие этого получается неявное поведение:
+		добавленные элементы не сохранятся в исходный слайс, но изменение существующих останется:
+	*/
+
+	modifySliceAndAppend(nums)
+	fmt.Println(nums) // [10]
+
+	a := []int{1, 2, 3}
+	appendAndModifySlice(a)
+	fmt.Println(a) // 123
+
+	RemoveTeacherNoOrder(a, 2)
+	fmt.Println(a)
+
+	a = Remove(a, 2)
+	fmt.Println(a)
+}
