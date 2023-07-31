@@ -37,6 +37,21 @@ func RemoveTeacherNoOrder(nums []int, i int) []int {
 	return nums[:len(nums)-1]
 }
 
+func IntsCopy(src []int, maxLen int) []int {
+	if maxLen <= 0 {
+		return []int{}
+	}
+
+	if maxLen > len(src) {
+		maxLen = len(src)
+	}
+
+	cp := make([]int, maxLen)
+	copy(cp, src)
+
+	return cp
+}
+
 func main() {
 	nums := make([]int, 0, 5)
 
@@ -81,4 +96,7 @@ func main() {
 	for i := range nums1 {
 		fmt.Println(i)
 	}
+
+	var emptySlice []int
+	fmt.Println(emptySlice)
 }
