@@ -25,6 +25,11 @@ func ModifySpaces(s, mode string) string {
 }
 
 func main() {
+	fmt.Println(strings.Join([]string{"Hello", "World"}, " "))                                         // Hello World
+	fmt.Println(strings.Trim(strings.Join([]string{"Hello", "World", ""}, " "), " ") == "Hello World") // true
+
+	fmt.Println(strings.Split("Hello World", " ")) // [Hello World]
+
 	fmt.Println(strings.Trim(" hello ", " ")) // "hello"
 
 	fmt.Println(strings.ToLower("HELLO")) // "hello"
@@ -38,4 +43,5 @@ func main() {
 
 	fmt.Println(Greetings("  ИВАН  "))
 	fmt.Println(ModifySpaces("Hello World!", "underscore"))
+
 }
