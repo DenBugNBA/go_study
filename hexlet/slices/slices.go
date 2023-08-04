@@ -89,13 +89,21 @@ func main() {
 	// panic: runtime error: slice bounds out of range [:6] with capacity 5
 	// fmt.Println(nums1[:6])
 
+	fmt.Println(nums1[:5]) // [1 2 3 4 5]
+
+	fmt.Println()
+
 	for i, num := range nums1 {
 		fmt.Println(i, num)
 	}
 
+	fmt.Println()
+
 	for i := range nums1 {
 		fmt.Println(i)
 	}
+
+	fmt.Println()
 
 	var emptySlice []int
 	fmt.Println(emptySlice)
