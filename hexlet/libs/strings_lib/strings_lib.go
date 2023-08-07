@@ -30,6 +30,8 @@ func main() {
 
 	fmt.Println(strings.Split("Hello World", " ")) // [Hello World]
 
+	fmt.Println(strings.Fields("  one    two\tthree four ")) // [one two three four]
+
 	fmt.Println(strings.Trim(" hello ", " "))            // "hello"
 	fmt.Println(strings.TrimSpace(" hello ") == "hello") // true
 
