@@ -1,9 +1,28 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unicode"
+)
+
+func IsASCIITeacher(s string) bool {
+	for _, r := range s {
+		if r > unicode.MaxASCII {
+			return false
+		}
+	}
+
+	return true
+}
+
+func IsASCII(s string) bool {
+	return len([]rune(s)) == len([]byte(s))
+}
 
 func main() {
 	emoji := []rune("привет😀")
+
+	fmt.Println(len(emoji)) // 7
 
 	for i := 0; i < len(emoji); i++ {
 		fmt.Println(emoji[i], string(emoji[i])) // выводим код символа и его строковое представление

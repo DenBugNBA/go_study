@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode"
 )
 
 func Greetings(name string) string {
@@ -22,6 +23,19 @@ func ModifySpaces(s, mode string) string {
 	}
 
 	return strings.ReplaceAll(s, " ", replaceChar)
+}
+
+func LatinLetters(s string) string {
+	sb := &strings.Builder{}
+
+	for _, r := range s {
+		// которая проверяет, что руна является латинским символом или нет
+		if unicode.Is(unicode.Latin, r) {
+			sb.WriteRune(r)
+		}
+	}
+
+	return sb.String()
 }
 
 func main() {
@@ -47,4 +61,11 @@ func main() {
 	fmt.Println(Greetings("  ИВАН  "))
 	fmt.Println(ModifySpaces("Hello World!", "underscore"))
 
+	sb := strings.Builder{}
+
+	sb.WriteString("hello")
+	sb.WriteString(" ")
+	sb.WriteString("world")
+
+	fmt.Println(sb.String()) // "hello world"
 }
