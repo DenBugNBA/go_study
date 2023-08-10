@@ -11,8 +11,6 @@ func main() {
 	out := bufio.NewWriter(os.Stdout)
 	defer out.Flush()
 
-	fmt.Fscan(in)
-
 	var n int
 	fmt.Fscan(in, &n)
 
