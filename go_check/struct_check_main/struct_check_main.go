@@ -13,7 +13,9 @@ func main() {
 	fmt.Println(p1)
 
 	// Fields are assigned without explicit names
-	// car := struct_check.Car{"Lada", 10}
-	car := struct_check.Car{Name: "Lada", Speed: 10}
-	fmt.Println(car)
+	car1 := struct_check.Car{"Lada", 10}
+	fmt.Println(car1)
+
+	car2 := struct_check.Car{Name: "Lada", Speed: 10}
+	fmt.Println(car2)
 }
