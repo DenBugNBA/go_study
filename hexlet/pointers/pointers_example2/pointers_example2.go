@@ -10,4 +10,7 @@ func main() {
 
 	fmt.Println("creature =", creature)
 	fmt.Println("pointer =", pointer)
+
+	*pointer = "dog"
+	fmt.Println(creature)
 }

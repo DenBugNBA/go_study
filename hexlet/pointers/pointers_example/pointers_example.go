@@ -21,4 +21,9 @@ func main() {
 	fmt.Println("zeroptr:", i) // 0
 
 	fmt.Println("pointer:", &i) // 0xc0000120d8
+
+	a := 1
+	pointer := &a
+	*pointer = 2
+	fmt.Println(a) // 2
 }
