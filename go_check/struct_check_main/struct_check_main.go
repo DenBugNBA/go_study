@@ -8,6 +8,7 @@ import (
 func main() {
 	// Cannot assign a value to the unexported field '_Age'
 	// p1 := struct_check.Person{Name: "Jack", _Age: 10}
+
 	p1 := struct_check.Person{Name: "Jack"}
 	fmt.Println(p1)
 
