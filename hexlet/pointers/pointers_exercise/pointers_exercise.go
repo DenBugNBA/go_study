@@ -57,5 +57,4 @@ func main() {
 	// изначальная структура "p" не изменяется
 	cp.Children[0] = Child{}
 	fmt.Println(p.Children) // [{Andy 18}]
-
 }
