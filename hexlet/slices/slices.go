@@ -83,6 +83,9 @@ func main() {
 	nums1 := []int{1, 2, 3, 4, 5}
 	fmt.Println(nums1[5:]) // []
 
+	fmt.Printf("len: %d\n", len(nums1)) // 5
+	fmt.Printf("cap: %d\n", cap(nums1)) // 5
+
 	// panic: runtime error: slice bounds out of range [6:5]
 	//fmt.Println(nums1[6:]) // []
 
