@@ -22,7 +22,6 @@ var (
 const UnknownErrorMsg = "unknown error"
 
 func GetErrorMsg(err error) string {
-	//return err.Error()
 	if errors.Is(err, ErrBadConnection) || errors.Is(err, ErrBadRequest) {
 		if strings.HasPrefix(err.Error(), "wrap: ") {
 			return err.Error()[6:]
@@ -55,9 +54,9 @@ func GetErrorMsgTeacher(err error) string {
 }
 
 func main() {
-	//fmt.Println(GetErrorMsg(ErrBadConnection))                      // "bad connection"
-	//fmt.Println(GetErrorMsg(ErrBadRequest))                         // "bad request"
-	//fmt.Println(GetErrorMsg(errors.New("random error")))            // "unknown error"
-	//fmt.Println(GetErrorMsg(NonCriticalError{}))                    // ""
-	fmt.Println(GetErrorMsgTeacher(fmt.Errorf("wrap: %w", ErrBadRequest))) // ""
+	fmt.Println(GetErrorMsg(ErrBadConnection))                      // "bad connection"
+	fmt.Println(GetErrorMsg(ErrBadRequest))                         // "bad request"
+	fmt.Println(GetErrorMsg(errors.New("random error")))            // "unknown error"
+	fmt.Println(GetErrorMsg(NonCriticalError{}))                    // ""
+	fmt.Println(GetErrorMsg(fmt.Errorf("wrap: %w", ErrBadRequest))) // ""
 }
