@@ -37,6 +37,13 @@ func main() {
 	fmt.Println(p.wallet) // rub
 
 	u := UserJSON{}
+
+	fmt.Println(u.ID) // 0
+
+	emptyUser, _ := json.Marshal(u)
+	fmt.Println(emptyUser)
+	fmt.Println(string(emptyUser))
+
 	u.ID = 22
 	u.Email = "test@test.com"
 	u.FirstName = "John"
