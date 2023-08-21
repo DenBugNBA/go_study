@@ -27,6 +27,13 @@ func main() {
 	// Строки в Go — это иммутабельные массивы байт
 	s := "hey"
 
+	q := `
+		SELECT *
+		FROM person
+		WHERE age > 18
+	`
+	fmt.Println(q)
+
 	// Байты представляют ASCII символы, а в кодовой таблице ASCII символов 256 кодов:
 	fmt.Println(s[0], s[1], s[2]) // 104 101 121
 
@@ -56,7 +63,13 @@ func main() {
 
 	// Если строка содержит мультибайтовые символы, вывод будет некорректен:
 	wordRussian := "привет"
+	fmt.Println(wordRussian, "- wordRussian")
+
+	// Функция считает кол-во байт, а не кол-во символов
+	fmt.Println(len(wordRussian), "- len(wordRussian)")
+
 	for i := 0; i < len(wordRussian); i++ {
+		fmt.Println(wordRussian[i])
 		fmt.Println(string(wordRussian[i]))
 	}
 	// Go будет "делить" символы, кодируемые несколькими байтами на одиночные, и переводить по таблице ASCII
