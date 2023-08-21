@@ -58,5 +58,5 @@ func main() {
 	fmt.Println(GetErrorMsg(ErrBadRequest))                         // "bad request"
 	fmt.Println(GetErrorMsg(errors.New("random error")))            // "unknown error"
 	fmt.Println(GetErrorMsg(NonCriticalError{}))                    // ""
-	fmt.Println(GetErrorMsg(fmt.Errorf("wrap: %w", ErrBadRequest))) // ""
+	fmt.Println(GetErrorMsg(fmt.Errorf("wrap: %w", ErrBadRequest))) // "bad request"
 }
