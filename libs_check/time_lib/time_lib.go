@@ -15,13 +15,13 @@ func main() {
 
 	fmt.Println()
 
-	const minTime = 94608000
+	const minSeconds = 94608000
 
-	fmt.Println(time.Unix(minTime, 0), "- min time")
+	fmt.Println(time.Unix(minSeconds, 0), "- min seconds")
 
 	fmt.Println()
 
-	randomSeconds := rand.Int63n(timeNowUnix-minTime) + minTime
+	randomSeconds := rand.Int63n(timeNowUnix-minSeconds) + minSeconds
 	fmt.Println(randomSeconds, "- random seconds")
 
 	randomTime := time.Unix(randomSeconds, 0)
