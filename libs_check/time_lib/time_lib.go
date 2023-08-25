@@ -8,10 +8,12 @@ import (
 
 func main() {
 	timeNow := time.Now()
-	fmt.Println(timeNow)
+	fmt.Println(timeNow, "- time now")
 
 	timeNowUnix := timeNow.Unix() // number of seconds elapsed since January 1, 1970, UTC.
-	fmt.Println(timeNowUnix)
+	fmt.Println(timeNowUnix, "- seconds now")
+
+	fmt.Println()
 
 	const minTime = 94608000
 
