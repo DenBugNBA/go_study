@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
+	// stack
 	defer fmt.Println("3rd")
 	defer fmt.Println("2nd")
 

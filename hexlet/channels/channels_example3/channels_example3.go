@@ -38,16 +38,16 @@ func main() {
 	go SumWorker(numsCh, sumCh)
 
 	numsCh <- nil
-	fmt.Println(<-sumCh)
+	fmt.Println(<-sumCh) // 0
 
 	numsCh <- []int{}
-	fmt.Println(<-sumCh)
+	fmt.Println(<-sumCh) // 0
 
 	numsCh <- []int{10, 10, 10}
-	fmt.Println(<-sumCh)
+	fmt.Println(<-sumCh) // 3
 
 	numsCh <- []int{500, 5, 10, 25}
-	fmt.Println(<-sumCh)
+	fmt.Println(<-sumCh) // 540
 
 	fmt.Println("End")
 }

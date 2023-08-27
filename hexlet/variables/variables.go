@@ -28,4 +28,10 @@ func main() {
 	)
 
 	fmt.Println(a, b, c)
+
+	var i int
+	j := i // j is an int
+
+	i = 1
+	fmt.Println(i, j) // 1, 0
 }
