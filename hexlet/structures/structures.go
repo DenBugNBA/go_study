@@ -32,6 +32,11 @@ type UserValidate struct {
 	FirstName string `validate:"required"`
 }
 
+type Vertex struct {
+	X int
+	Y int
+}
+
 func main() {
 	p := Person{wallet: "rub"}
 	fmt.Println(p.wallet) // rub
@@ -51,4 +56,19 @@ func main() {
 	bs, _ := json.Marshal(u)
 
 	fmt.Println(string(bs)) // {"id":22,"email":"test@test.com","first_name":"John"}
+
+	fmt.Println()
+
+	v := Vertex{1, 2}
+	pointer := &v
+
+	fmt.Println(pointer) // &{1 2}
+
+	// without the explicit dereference
+	pointer.X = 1e9
+	fmt.Println(v) // {1000000000 2}
+}
+
+func describe(i interface{}) {
+	fmt.Printf("(%v, %T)\n", i, i)
 }

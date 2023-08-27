@@ -49,9 +49,9 @@ func main() {
 	fmt.Printf("3) %+v\n", creature2)
 
 	creature3 := Creature{Species: "cat"}
-	fmt.Println(creature3)          // new
-	fmt.Println(creature3.String()) // new
-	fmt.Println(creature3)          // new
+	fmt.Println(creature3) // new
+	//fmt.Println(creature3.String()) // new
+	fmt.Println(creature3) // new
 
 	creature3.Reset()
 	fmt.Println(creature3) // new
@@ -80,10 +80,10 @@ func changeCreatureRefSmart(creature *Creature) {
 }
 
 // вызывается при fmt.Println(creature)
-func (c Creature) String() string {
-	c.Species = "new"
-	return c.Species
-}
+//func (c Creature) String() string {
+//	c.Species = "new"
+//	return c.Species
+//}
 
 func (c Creature) Reset() {
 	c.Species = ""

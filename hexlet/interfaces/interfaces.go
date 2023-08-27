@@ -29,4 +29,19 @@ func main() {
 	// в функцию TestPrint передается структура User,
 	// и так как она реализует интерфейс Printer, все работает без ошибок
 	TestPrint(&User{email: "test@test.com"})
+
+	var i interface{} = "hello"
+
+	s := i.(string)
+	fmt.Println(s)
+
+	s, ok := i.(string)
+	fmt.Println(s, ok)
+
+	f, ok := i.(float64)
+	fmt.Println(f, ok)
+
+	// panic
+	// f = i.(float64)
+
 }

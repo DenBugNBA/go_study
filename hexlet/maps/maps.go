@@ -44,6 +44,17 @@ func main() {
 	engToRusEmpty := make(map[string]string)
 	fmt.Println(engToRusEmpty) // map[]
 
+	// no-op
+	delete(engToRusEmpty, "word")
+
+	rus := engToRusEmpty["word"]
+	fmt.Println(rus) //
+
+	rus, ok := engToRusEmpty["word"]
+	fmt.Println(rus, ok) //  false
+
+	fmt.Println()
+
 	engToRus := make(map[string]string, 10)
 	fmt.Println(engToRus)      // map[]
 	fmt.Println(len(engToRus)) // 0

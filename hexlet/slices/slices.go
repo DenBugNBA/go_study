@@ -109,5 +109,74 @@ func main() {
 	fmt.Println()
 
 	var emptySlice []int
-	fmt.Println(emptySlice)
+	fmt.Println(emptySlice, len(emptySlice), cap(emptySlice))
+	if emptySlice == nil {
+		fmt.Println("nil!")
+	}
+
+	fmt.Println()
+
+	s := []int{2, 3, 5, 7, 11, 13}
+	printSlice(s)
+
+	// Slice the slice to give it zero length.
+	s = s[:0]
+	printSlice(s)
+
+	// Extend its length.
+	s = s[:4]
+	printSlice(s)
+
+	// Drop its first two values.
+	s = s[2:]
+	printSlice(s)
+
+	s = s[:]
+	printSlice(s)
+
+	fmt.Println()
+
+	b := make([]int, 0, 5) // len=0 cap=5 []
+
+	printSlice(b)
+
+	b = b[:] // len=0 cap=5 []
+
+	printSlice(b)
+
+	b = b[:cap(b)] // len=5 cap=5 [0 0 0 0 0]
+	printSlice(b)
+
+	b = b[1:] // len=4 cap=4 [0 0 0 0]
+
+	printSlice(b)
+
+	numsArr := [5]int{1, 2, 3, 4, 5}
+	first := numsArr[:3]
+	printSlice(first)
+	first = numsArr[2:]
+	printSlice(first)
+
+	fmt.Println()
+
+	names := [4]string{
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	fmt.Println(names)
+
+	// A slice does not store any data, it just describes a section of an underlying array.
+	a1 := names[0:2]
+	b1 := names[1:3]
+	fmt.Println(a1, b1)
+
+	b1[0] = "XXX"
+	fmt.Println(a1, b1)
+	fmt.Println(names)
+}
+
+func printSlice(s []int) {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }

@@ -44,6 +44,8 @@ func main() {
 	bs := []byte(s)
 	fmt.Println(bs)
 
+	fmt.Println(string(bs))
+
 	fmt.Println()
 
 	emoji2 := []rune("cool😀")
