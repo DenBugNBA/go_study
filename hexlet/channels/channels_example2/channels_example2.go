@@ -19,6 +19,9 @@ func main() {
 	// закрываем канал
 	close(msgCh)
 
+	// panic: send on closed channel
+	// msgCh <- "closed"
+
 	// и ждем, пока printer закончит работу
 	time.Sleep(100 * time.Millisecond)
 }
