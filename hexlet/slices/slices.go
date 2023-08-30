@@ -182,7 +182,8 @@ func main() {
 	fmt.Println(arr) // []
 
 	arr = nil
-	fmt.Println(arr) // []
+	fmt.Println(arr)      // []
+	fmt.Println(len(arr)) // 0
 
 	arr = append(arr, "ddd")
 	fmt.Println(arr) // [ddd]
