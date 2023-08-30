@@ -175,6 +175,17 @@ func main() {
 	b1[0] = "XXX"
 	fmt.Println(a1, b1)
 	fmt.Println(names)
+
+	fmt.Println()
+
+	var arr []string
+	fmt.Println(arr) // []
+
+	arr = nil
+	fmt.Println(arr) // []
+
+	arr = append(arr, "ddd")
+	fmt.Println(arr) // [ddd]
 }
 
 func printSlice(s []int) {
