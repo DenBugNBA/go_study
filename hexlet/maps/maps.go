@@ -76,4 +76,26 @@ func main() {
 	for id := range idToName {
 		fmt.Println("id: ", id)
 	}
+
+	fmt.Println()
+
+	var badMap map[string]string
+	fmt.Println(badMap, &badMap) // map[] &map[]
+	// panic: assignment to entry in nil map
+	// badMap["hello"] = "world"
+
+	goodMap := make(map[string]string)
+	fmt.Println(goodMap, &goodMap)
+	goodMap["hello"] = "world"
+	fmt.Println(goodMap)
+
+	fmt.Println()
+
+	var i int
+	i = 1
+	fmt.Println(i) // 1
+
+	var words []string
+	words = append(words, "hello")
+	fmt.Println(words) // [hello]
 }
