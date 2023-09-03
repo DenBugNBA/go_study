@@ -5,6 +5,9 @@ import "fmt"
 func main() {
 	strCh := make(chan string)
 
+	// fatal error: all goroutines are asleep - deadlock!
+	// strCh <- "hello"
+
 	go readChannel(strCh)
 
 	strCh <- "hello"
