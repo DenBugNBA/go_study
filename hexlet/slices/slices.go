@@ -148,8 +148,9 @@ func main() {
 	printSlice(b)
 
 	b = b[1:] // len=4 cap=4 [0 0 0 0]
-
 	printSlice(b)
+
+	fmt.Println()
 
 	numsArr := [5]int{1, 2, 3, 4, 5}
 	first := numsArr[:3]
