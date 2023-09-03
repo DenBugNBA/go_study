@@ -7,7 +7,8 @@ import (
 func main() {
 	numCh := make(chan int)
 
-	<-numCh // программа зависнет здесь и будет ошибка: fatal error: all goroutines are asleep - deadlock!
+	// fatal error: all goroutines are asleep - deadlock!
+	<-numCh // программа зависнет здесь и будет ошибка
 
 	fmt.Println("program has ended") // эта строка никогда не выведется
 }
