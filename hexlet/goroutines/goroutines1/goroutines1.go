@@ -10,5 +10,5 @@ func main() {
 	go fmt.Println("Hello concurrent world")
 
 	// если не подождать, то программа закончится, не успев вывести сообщение
-	time.Sleep(100 * time.Millisecond)
+	time.Sleep(10 * time.Millisecond)
 }
