@@ -17,6 +17,10 @@ func Index[T comparable](s []T, x T) int {
 func main() {
 	// Index works on a slice of ints
 	si := []int{10, 20, 15, -10}
+
+	// fmt.Println(Index[int](si, 15))
+
+	// можно опустить тип аргумента
 	fmt.Println(Index(si, 15))
 
 	// Index also works on a slice of strings
