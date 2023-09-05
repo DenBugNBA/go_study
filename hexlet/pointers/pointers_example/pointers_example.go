@@ -26,4 +26,9 @@ func main() {
 	pointer := &a
 	*pointer = 2
 	fmt.Println(a) // 2
+
+	nums := []int{1, 2, 3}
+	numsPointer := &nums
+
+	fmt.Println(*numsPointer)
 }
