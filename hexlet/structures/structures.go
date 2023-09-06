@@ -67,6 +67,14 @@ func main() {
 	// without the explicit dereference
 	pointer.X = 1e9
 	fmt.Println(v) // {1000000000 2}
+
+	fmt.Println()
+
+	u1 := UserJSON{ID: 10}
+	u2 := UserJSON{ID: 10}
+	fmt.Printf("%+v\n", u1) // {ID:10 Email: FirstName:}
+	fmt.Println(u1 == u2)   // true
+	fmt.Println(&u1 == &u2) // false
 }
 
 func describe(i interface{}) {
