@@ -6,10 +6,10 @@ import (
 )
 
 func main() {
-	fmt.Println(X2())
+	fmt.Println(XCorrect())
 }
 
-func X1() (err error) {
+func XOriginal() (err error) {
 	defer func() {
 		e := recover()
 		if e != nil {
@@ -19,21 +19,17 @@ func X1() (err error) {
 	panic(errors.New("my error"))
 }
 
-func X2() (err error) {
-	defer recoverSomething(&err)
-
+func XCorrect() (err error) {
+	defer suppress(&err)
 	panic(errors.New("my error"))
 }
 
-func recoverSomething(err *error) {
+// Но так считается не совсем правильно, считается,
+// что надо все же прокладывать функцией и recover вызывать
+// только в defer, но это уже не вопрос задачи
+func suppress(err *error) {
 	e := recover()
-
 	if e != nil {
-		errRecovered := e.(error)
-		errPointer := &errRecovered
-		err = errPointer
+		*err = e.(error)
 	}
-
-	fmt.Println(err)
-	fmt.Println(*err)
 }
