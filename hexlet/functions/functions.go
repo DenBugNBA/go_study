@@ -38,4 +38,9 @@ func main() {
 
 	fmt.Println(multiplyAny(1, 2, 3))    // 6
 	fmt.Println(multiplyAny(1, 2, 3, 4)) // 24
+
+	// empty() (no value) used as value
+	// emptyVal := empty()
 }
+
+func empty() {}
