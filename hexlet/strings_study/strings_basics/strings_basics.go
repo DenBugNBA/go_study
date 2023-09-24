@@ -27,13 +27,6 @@ func main() {
 	// Строки в Go — это иммутабельные массивы байт
 	s := "hey"
 
-	q := `
-		SELECT *
-		FROM person
-		WHERE age > 18
-	`
-	fmt.Println(q)
-
 	// Байты представляют ASCII символы, а в кодовой таблице ASCII символов 256 кодов:
 	fmt.Println(s[0], s[1], s[2]) // 104 101 121
 
@@ -43,6 +36,8 @@ func main() {
 	fmt.Println(bs) // [104 101 121]
 
 	fmt.Println(string(bs)) // hey
+
+	fmt.Println()
 
 	asciiCh := byte('Z')
 	asciiChStr := string(asciiCh)
@@ -76,4 +71,11 @@ func main() {
 
 	fmt.Println(ShiftASCII("abc", 0))  // "abc"
 	fmt.Println(ShiftASCII("abc1", 1)) // "bcd2"
+
+	q := `
+		SELECT *
+		FROM person
+		WHERE age > 18
+	`
+	fmt.Println(q)
 }

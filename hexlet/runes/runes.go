@@ -65,4 +65,12 @@ func main() {
 	for _, ch := range unicodeString {
 		fmt.Println(ch, string(ch)) // выводим код символа и его строковое представление
 	}
+
+	fmt.Println()
+
+	name := "異體字"
+	firstLetter := []rune(name)[0] // []rune(name) — конвертируем строку в слайс рун
+	// и с помощью [0] забираем первый элемент
+	fmt.Println(firstLetter)         //Вывод: 30064
+	fmt.Println(string(firstLetter)) //Вывод: 異
 }
