@@ -25,6 +25,19 @@ func TestPrint(p Printer) {
 	p.Print()
 }
 
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p Person) SayHello() {
+	fmt.Printf("Hello, my name is %s and I'm %d years old.\n", p.Name, p.Age)
+}
+
+type Human interface {
+	SayHello()
+}
+
 func main() {
 	// в функцию TestPrint передается структура User,
 	// и так как она реализует интерфейс Printer, все работает без ошибок
@@ -35,6 +48,7 @@ func main() {
 	s := i.(string)
 	fmt.Println(s)
 
+	// type assertion
 	s, ok := i.(string)
 	fmt.Println(s, ok)
 
@@ -44,4 +58,20 @@ func main() {
 	// panic
 	// f = i.(float64)
 
+	fmt.Println()
+
+	// переменная типа Human, которая будет ссылаться на объект типа Person
+	var h Human = Person{Name: "John", Age: 25}
+	h.SayHello()
+
+	fmt.Println()
+
+	// может хранить значения любых типов данных
+	var values []interface{}
+	values = append(values, "hello")
+	values = append(values, 42)
+	values = append(values, true)
+	fmt.Println(values)
 }
+
+func anyType(val any) {}
