@@ -25,5 +25,6 @@ func main() {
 	}
 
 	// os.Stdout.Write(b)
+	fmt.Println(b)
 	fmt.Println(string(b))
 }
