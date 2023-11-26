@@ -21,6 +21,7 @@ func main() {
 	longTrickyName := "Josefina"
 	fmt.Println(longTrickyName)
 
+	//объявление нескольких переменных в одном блоке
 	var (
 		a string // ""
 		b bool   // false

@@ -11,4 +11,8 @@ func main() {
 	fmt.Scan(&num)
 
 	fmt.Println(num)
+
+	// можно читать с консоли сразу несколько переменных:
+	var a, b, c int
+	fmt.Scan(&a, &b, &c)
 }
