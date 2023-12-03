@@ -28,4 +28,17 @@ func main() {
 
 	fmt.Println(a == b) // true
 	fmt.Println(a == c) // false
+
+	fmt.Println()
+
+	// пройтись по длине массива или среза, без элементов массива и индексов:
+	for range c {
+		fmt.Println("work")
+	}
+
+	fmt.Println()
+
+	workArray := [3]int{1, 2, 3}
+	workArray[0], workArray[1] = workArray[1], workArray[0]
+	fmt.Println(workArray)
 }
