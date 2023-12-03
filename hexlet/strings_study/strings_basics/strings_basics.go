@@ -78,4 +78,6 @@ func main() {
 		WHERE age > 18
 	`
 	fmt.Println(q)
+
+	fmt.Println("\"hello\"") // "hello"
 }
