@@ -139,4 +139,19 @@ func main() {
 	do(21)
 	do("hello")
 	do(true)
+
+	fmt.Println()
+
+	num := 3
+	word := "korov"
+
+	switch lastNum := num % 10; lastNum {
+	case 1:
+		word += "a"
+	case 2, 3, 4:
+		word += "y"
+	}
+
+	fmt.Printf("%d %s", num, word)
+
 }
