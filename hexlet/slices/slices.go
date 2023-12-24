@@ -52,6 +52,17 @@ func IntsCopy(src []int, maxLen int) []int {
 	return cp
 }
 
+func ExampleExpandSlice2() {
+	s1 := []int{1, 2, 3, 4, 5}
+	s2 := []int{6, 7, 8, 9, 10}
+
+	s1 = append(s1, s2...)
+	fmt.Println(s1)
+
+	// Output:
+	// [1 2 3 4 5 6 7 8 9 10]
+}
+
 func main() {
 	nums := make([]int, 0, 5)
 
@@ -188,6 +199,19 @@ func main() {
 
 	arr = append(arr, "ddd")
 	fmt.Println(arr) // [ddd]
+
+	fmt.Println()
+
+	// numbers := []int{1, 2, 3, 4, 5}
+	// cannot use numbers (variable of type []int) as []any value in argument to fmt.Println
+	// fmt.Println(numbers...)
+
+	numbers := []interface{}{1, 2, 3, 4, 5}
+	fmt.Println(numbers...)
+
+	fmt.Println()
+
+	ExampleExpandSlice2()
 }
 
 func printSlice(s []int) {
