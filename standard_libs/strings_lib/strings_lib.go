@@ -3,21 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
-	"unicode"
 )
-
-func LatinLetters(s string) string {
-	sb := &strings.Builder{}
-
-	for _, r := range s {
-		// проверяет, что руна является латинским символом
-		if unicode.Is(unicode.Latin, r) {
-			sb.WriteRune(r)
-		}
-	}
-
-	return sb.String()
-}
 
 func main() {
 	fmt.Println(strings.Contains("test", "es")) // true
@@ -58,6 +44,4 @@ func main() {
 	sb.WriteString("world")
 
 	fmt.Println(sb.String()) // "hello world"
-
-	fmt.Println(LatinLetters("привет hello")) // hello
 }
