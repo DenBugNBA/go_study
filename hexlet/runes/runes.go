@@ -20,8 +20,12 @@ func IsASCII(s string) bool {
 }
 
 func main() {
-	emoji := []rune("привет😀")
+	simpleRune := 'r'
+	fmt.Println(simpleRune, string(simpleRune)) // 114 r
 
+	fmt.Println()
+
+	emoji := []rune("привет😀")
 	fmt.Println(len(emoji)) // 7
 
 	for i := 0; i < len(emoji); i++ {
