@@ -18,6 +18,7 @@ func main() {
 	fmt.Println(unicode.IsSpace('\t')) // true
 
 	fmt.Println(unicode.IsUpper('A')) // true
+	fmt.Println(unicode.IsUpper('1')) // false (!!)
 
 	fmt.Println(string(unicode.ToLower('F'))) // f
 
