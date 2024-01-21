@@ -10,5 +10,5 @@ func MinInt(x, y int) int {
 }
 
 func main() {
-	fmt.Println(MinInt(5, 4))
+	fmt.Println(MinInt(5, 4)) // 4
 }
