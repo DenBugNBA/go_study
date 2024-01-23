@@ -1,6 +1,9 @@
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 func validateName(name string) error {
 	if name == "" {
@@ -23,4 +26,9 @@ type TimeoutErr struct {
 // и может быть использована как обычная ошибка
 func (e *TimeoutErr) Error() string {
 	return e.msg
+}
+
+func main() {
+	err := errors.New("my error")
+	fmt.Println(err)
 }
