@@ -79,19 +79,6 @@ func main() {
 
 	fmt.Println()
 
-	// мапа не инициализирована
-	var nilMap map[string]string
-	fmt.Println(nilMap, &nilMap) // map[] &map[]
-	// panic: assignment to entry in nil map
-	// badMap["hello"] = "world"
-
-	initializedMap := make(map[string]string)
-	fmt.Println(initializedMap, &initializedMap) // map[] &map[]
-	initializedMap["hello"] = "world"
-	fmt.Println(initializedMap) // map[hello:world]
-
-	fmt.Println()
-
 	var i int
 	fmt.Println(i) // 0
 	i = 1
