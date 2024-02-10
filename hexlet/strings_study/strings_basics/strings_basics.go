@@ -80,4 +80,7 @@ func main() {
 	fmt.Println(q)
 
 	fmt.Println("\"hello\"") // "hello"
+
+	// строки можно складывать
+	fmt.Println("hello " + "world")
 }
