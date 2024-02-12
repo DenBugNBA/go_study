@@ -25,7 +25,7 @@ func main() {
 	fmt.Println(strings.Replace("blanotblanot", "not", "***", -1)) // bla***bla***
 	fmt.Println(strings.Replace("blanotblanot", "", "***", -1))    // ***b***l***a***n***o***t***b***l***a***n***o***t***
 
-	fmt.Println(strings.ReplaceAll("one two three", " ", "_"))
+	fmt.Println(strings.ReplaceAll("one two three", " ", "_")) // one_two_three
 
 	fmt.Println(strings.Split("a-b-c-d-e", "-")) // [a b c d e]
 
