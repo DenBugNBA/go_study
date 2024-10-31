@@ -7,7 +7,6 @@ import (
 
 // return channel for input numbers
 func getInputChan() <-chan int {
-	// make return channel
 	input := make(chan int, 100)
 
 	// sample numbers
@@ -27,10 +26,8 @@ func getInputChan() <-chan int {
 
 // returns a channel which returns square of numbers
 func getSquareChan(input <-chan int) <-chan int {
-	// make return channel
 	output := make(chan int, 100)
 
-	// run goroutine
 	go func() {
 		// push squares until input channel closes
 		for num := range input {
@@ -48,10 +45,8 @@ func getSquareChan(input <-chan int) <-chan int {
 // this produce fan-in channel
 // this is variadic function
 func merge(outputsChan ...<-chan int) <-chan int {
-	// create a WaitGroup
 	var wg sync.WaitGroup
 
-	// make return channel
 	merged := make(chan int, 100)
 
 	// increase counter to number of channels `len(outputsChan)`
@@ -70,7 +65,7 @@ func merge(outputsChan ...<-chan int) <-chan int {
 		wg.Done()
 	}
 
-	// run above `output` function as groutines, `n` number of times
+	// run above `output` function as goroutines, `n` number of times
 	// where n is equal to number of channels received as argument the function
 	// here we are using `for range` loop on `outputsChan` hence no need to manually tell `n`
 	for _, optChan := range outputsChan {
