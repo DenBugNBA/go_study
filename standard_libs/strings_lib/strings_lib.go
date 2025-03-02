@@ -37,7 +37,7 @@ func main() {
 
 	fmt.Println(strings.TrimSpace(" hello ")) // "hello"
 
-	sb := strings.Builder{}
+	sb := new(strings.Builder)
 
 	sb.WriteString("hello")
 	sb.WriteString(" ")

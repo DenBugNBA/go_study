@@ -12,18 +12,20 @@ type Person struct {
 }
 
 func main() {
-	name := "Andy"
-
 	// подставляем строку
-	fmt.Sprintf("hello %s", name) // "hello Andy"
+	fmt.Println(fmt.Sprintf("hello %s", "Andy")) // "hello Andy"
 
 	// число
-	fmt.Sprintf("there are %d kittens", 10) // "there are 10 kittens"
+	fmt.Println(fmt.Sprintf("there are %d kittens", 10)) // "there are 10 kittens"
 
 	// логический тип
-	fmt.Sprintf("your story is %t", true) // "your story is true"
+	fmt.Println(fmt.Sprintf("your story is %t", true)) // "your story is true"
 
-	p := Person{Name: "Andy", Age: 18}
+	fmt.Println(fmt.Sprintf("rounded float: %.2f", 2.955))
+
+	fmt.Println()
+
+	p := &Person{Name: "Andy", Age: 18}
 
 	// вывод значений структуры
 	fmt.Println("simple struct:", p)
@@ -35,5 +37,5 @@ func main() {
 	fmt.Printf("Golang struct: %#v\n", p)
 
 	m := map[int]string{1: "foo", 2: "bar"}
-	fmt.Printf("Type: %T", m) // Type: map[int]string
+	fmt.Printf("Type: %T\n", m) // Type: map[int]string
 }

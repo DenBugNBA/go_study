@@ -30,8 +30,6 @@ func main() {
 	go service1(chan1)
 	go service2(chan2)
 
-	time.Sleep(1 * time.Second)
-
 	select {
 	case res := <-chan1:
 		fmt.Println("Response from service 1", res, time.Since(start))
