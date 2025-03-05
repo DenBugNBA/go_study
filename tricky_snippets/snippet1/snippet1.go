@@ -1,37 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"os"
-)
+import "fmt"
 
-type user struct {
-	name string
-	age  int
-}
+func change(a *int) {
+	t := 2
 
-func Foo() error {
-	var err *os.PathError = nil
-	return err
+	a = &t
+
+	fmt.Println(a == &t)
+
+	*a = 10
+
+	fmt.Println("t =", t)
 }
 
 func main() {
-	err := Foo()
+	a := 3
+	change(&a)
 
-	fmt.Println(err)        // <nil>
-	fmt.Println(err == nil) // false
-
-	fmt.Println()
-
-	var pointerInt *int = nil
-
-	fmt.Println(pointerInt)        // <nil>
-	fmt.Println(pointerInt == nil) // true
-
-	fmt.Println()
-
-	var pointerStruct *user = nil
-
-	fmt.Println(pointerStruct)        // <nil>
-	fmt.Println(pointerStruct == nil) // true
+	fmt.Println(a) // 3
 }

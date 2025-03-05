@@ -2,19 +2,16 @@ package main
 
 import "fmt"
 
-func change(a *int) {
-	t := 2
-
-	a = &t
-
-	fmt.Println(a == &t)
-
-	*a = 10
-}
-
 func main() {
-	a := 3
-	change(&a)
+	a := 2
 
-	fmt.Println(a) // 3
+	func() {
+		a := a
+		fmt.Println(a) // 2
+
+		a++
+		fmt.Println(a) // 3
+	}()
+
+	fmt.Println(a) // 2
 }
