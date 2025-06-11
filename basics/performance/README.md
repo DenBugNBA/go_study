@@ -23,6 +23,11 @@ pprof mem:
     go tool pprof performance.test mem.out
 ```
 
+веб-интерфейс для pprof:
+```shell
+    go tool pprof -http=:8083 performance.test mem.out
+```
+
 pprof commands:
 - top - самые долгие методы
 - list Unmarshal - сколько времени занимали операции внутри метода
